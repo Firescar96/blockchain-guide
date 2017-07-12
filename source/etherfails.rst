@@ -12,6 +12,8 @@ The attack involves exploiting this to make calls to a contract in a way the con
 
 TheDAO ultimately failed and led to a large rift in the Ethereum community, further devolving into a split of Ethereum into two different blockchains and cryptocurrencies. `Ethereum <ethereum.org>`_ and `Ethereum Classic <https://ethereumclassic.github.io>`_. `This article <http://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/>`_ provides more details on the consequencs of TheDAO's failure.
 
+For a hands on example of how the DAO hack worked check out `this github project <https://github.com/joeb000/mock-dao-hack>`_.
+
 Ethereum Naming Service (ENS) launch
 ====================================
 
