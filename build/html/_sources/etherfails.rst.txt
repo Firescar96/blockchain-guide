@@ -8,9 +8,12 @@ TheDAO
 TheDAO has multiple problems with it's design, enough that multiple prominent members of the Ethereum community `called for a moratorium <http://hackingdistributed.com/2016/05/27/dao-call-for-moratorium/>`_ until it could be redesigned. The biggest problem that led to its demise is called a “reentrancy attack”. By design of Ethereum's Turing complete language contracts can call each other.
 
 The attack involves exploiting this to make calls to a contract in a way the contract developer did not expect.
-`This article <http://vessenes.com/more-ethereum-attacks-race-to-empty-is-the-real-deal/>`_ has a full explanation of how the attack works. For someone who is not used to thinking in terms of blockchain based systems the bug is an easy one to make.
+`This Vessenes article <http://vessenes.com/more-ethereum-attacks-race-to-empty-is-the-real-deal/>`_ has a full explanation of how the attack works. For someone who is not used to thinking in terms of blockchain based systems the bug is an easy one to make.
 
-TheDAO ultimately failed and led to a large rift in the Ethereum community, further devolving into a split of Ethereum into two different blockchains and cryptocurrencies. `Ethereum <ethereum.org>`_ and `Ethereum Classic <https://ethereumclassic.github.io>`_. `This article <http://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/>`_ provides more details on the consequencs of TheDAO's failure.
+TheDAO ultimately failed and led to a large rift in the Ethereum community, further devolving into a split of Ethereum into two different blockchains and cryptocurrencies. `Ethereum <ethereum.org>`_ and `Ethereum Classic <https://ethereumclassic.github.io>`_.
+`This Coindesk article <http://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/>`_ provides more details on the consequences of TheDAO's failure.
+
+For a hands on example of how the DAO hack worked check out `this github project <https://github.com/joeb000/mock-dao-hack>`_.
 
 Ethereum Naming Service (ENS) launch
 ====================================
