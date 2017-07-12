@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Solidity Challenges &mdash; Blockchain Guide 1.0a1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Blockchain Guide 1.0a1 documentation" href="index.html"/>
+        <link rel="next" title="Failure By Example" href="etherfails.html"/>
+        <link rel="prev" title="Solidity" href="solidity.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blockchain Guide
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">Cryptology Primer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#alice-and-bob">Alice and Bob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#cryptographic-primitives-and-data-structures">Cryptographic Primitives and Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#hash-functions">Hash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#randomness">Randomness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#public-key-cryptography">Public-key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#signing">Signing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#diffie-hellman-key-exchange">Diffie-Hellman Key Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#merkel-trees">Merkel Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#game-theory">Game Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#nash-equilibrium">Nash Equilibrium</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#decentralize-all-the-things">Decentralize all The Things</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#appendix">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#a-schnorr-signatures">A) Schnorr Signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#b-rsa">B) RSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#c-diffie-hellman-key-exchange">C) Diffie-Hellman Key Exchange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitcoin.html">Bitcoin and the Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">In depth about Blockchain Technology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#trust">Trust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#chain-reorgs">Chain Reorgs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#types-of-nodes">Types of Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#private-vs-public-blockchains">Private vs Public Blockchains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#failure-modes">Failure Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#attack">51% Attack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#contentious-hardforks">Contentious Hardforks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#consensus-algorithms">Consensus Algorithms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations of the Blockchain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#virtual-machines">Virtual Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#size">Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#latency-and-consistency">Latency and Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#legality">Legality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#the-world-outside-the-blockchain">The World Outside the Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#identity">Identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ethereum.html">Ethereum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#wallets-and-interacting-with-the-ethereum-blockchain">Wallets and Interacting with the Ethereum Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#setting-up-development-environments">Setting up Development environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#solidity-basics">Solidity Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#interacting-with-your-contract-resources">Interacting with your contract - Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#extra-data">Extra Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solidity.html">Solidity</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Solidity Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="etherfails.html">Failure By Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#thedao">TheDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#ethereum-naming-service-ens-launch">Ethereum Naming Service (ENS) launch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#gnosis-token-sale">Gnosis Token sale</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blockchain Guide</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Solidity Challenges</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/etherchallenges.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solidity-challenges">
+<h1>Solidity Challenges<a class="headerlink" href="#solidity-challenges" title="Permalink to this headline">¶</a></h1>
+<p>These challenges are designed to help you become comfortable as a smart contract developer. They are loosely arranged in order of difficulty. These challenges are not scored, it’s up to you to determine when you have sufficiently completed them.</p>
+<p>You may need the <a class="reference external" href="./ethereum.html#interacting-with-your-contract-resources">resources from the previous section</a> to complete these challenges.</p>
+<ol class="arabic simple">
+<li>download testrpc and go-ethereum and succefully install them</li>
+<li>generate a new address using the geth console</li>
+<li>check your account balance (web3.eth.getBalance(&lt;your account&gt;))</li>
+<li>send 5ETH to the 0x0 address</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Hint: if you use the right blockchain you’ll have plenty of ETH</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li>create a constructor for a contract that initializes a uint32 variable and create getter and setter functions for that variable.</li>
+<li>install truffle and use its ‘init’ command to create a demo app</li>
+<li>call a the getter and setter functions you created earlier by adding your contract to the Truffle dev environment and using the Truffle console</li>
+<li>successfully initialize Web3 in the browser by hijacking the js console on <a class="reference external" href="https://ethereum.github.io/browser-solidity">https://ethereum.github.io/browser-solidity</a></li>
+<li>use Truffle to get a contract abi and address and call a function of the contract using the web console</li>
+<li>write and compile a very basic smart contract that forwards funds to another address</li>
+<li>multi contract interaction</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>write a “Ticker” contract with functions that convert between KES and ETH</li>
+<li>write from scratch or modify the ERC20 token standard to create a token that uses the Ticker contract to return a user’s balance in KES</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li>implement a function that can handle array deletions by shifting following elements to the left when an array element is deleted</li>
+<li>create a web interface corresponding to a function in a contract, implementing an “ethereum faucet” allowing a user to input an address into a textbox and click a button to get free eth</li>
+</ol>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="etherfails.html" class="btn btn-neutral float-right" title="Failure By Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="solidity.html" class="btn btn-neutral" title="Solidity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Firescar96.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0a1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

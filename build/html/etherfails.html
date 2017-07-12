@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Failure By Example &mdash; Blockchain Guide 1.0a1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Blockchain Guide 1.0a1 documentation" href="index.html"/>
+        <link rel="prev" title="Solidity Challenges" href="etherchallenges.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blockchain Guide
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">Cryptology Primer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#alice-and-bob">Alice and Bob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#cryptographic-primitives-and-data-structures">Cryptographic Primitives and Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#hash-functions">Hash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#randomness">Randomness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#public-key-cryptography">Public-key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#signing">Signing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#diffie-hellman-key-exchange">Diffie-Hellman Key Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#merkel-trees">Merkel Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#game-theory">Game Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#nash-equilibrium">Nash Equilibrium</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#decentralize-all-the-things">Decentralize all The Things</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#appendix">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#a-schnorr-signatures">A) Schnorr Signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#b-rsa">B) RSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#c-diffie-hellman-key-exchange">C) Diffie-Hellman Key Exchange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitcoin.html">Bitcoin and the Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">In depth about Blockchain Technology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#trust">Trust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#chain-reorgs">Chain Reorgs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#types-of-nodes">Types of Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#private-vs-public-blockchains">Private vs Public Blockchains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#failure-modes">Failure Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#attack">51% Attack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#contentious-hardforks">Contentious Hardforks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#consensus-algorithms">Consensus Algorithms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations of the Blockchain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#virtual-machines">Virtual Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#size">Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#latency-and-consistency">Latency and Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#legality">Legality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#the-world-outside-the-blockchain">The World Outside the Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#identity">Identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ethereum.html">Ethereum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#wallets-and-interacting-with-the-ethereum-blockchain">Wallets and Interacting with the Ethereum Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#setting-up-development-environments">Setting up Development environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#solidity-basics">Solidity Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#interacting-with-your-contract-resources">Interacting with your contract - Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#extra-data">Extra Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solidity.html">Solidity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="etherchallenges.html">Solidity Challenges</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Failure By Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thedao">TheDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ethereum-naming-service-ens-launch">Ethereum Naming Service (ENS) launch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gnosis-token-sale">Gnosis Token sale</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blockchain Guide</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Failure By Example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/etherfails.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="failure-by-example">
+<h1>Failure By Example<a class="headerlink" href="#failure-by-example" title="Permalink to this headline">¶</a></h1>
+<p>These are some examples of Ethereum applications which serve as examples of both what not to do and how to recover from failure.</p>
+<div class="section" id="thedao">
+<h2>TheDAO<a class="headerlink" href="#thedao" title="Permalink to this headline">¶</a></h2>
+<p>TheDAO has multiple problems with it’s design, enough that multiple prominent members of the Ethereum community <a class="reference external" href="http://hackingdistributed.com/2016/05/27/dao-call-for-moratorium/">called for a moratorium</a> until it could be redesigned. The biggest problem that led to its demise is called a “reentrancy attack”. By design of Ethereum’s Turing complete language contracts can call each other.</p>
+<p>The attack involves exploiting this to make calls to a contract in a way the contract developer did not expect.
+<a class="reference external" href="http://vessenes.com/more-ethereum-attacks-race-to-empty-is-the-real-deal/">This article</a> has a full explanation of how the attack works. For someone who is not used to thinking in terms of blockchain based systems the bug is an easy one to make.</p>
+<p>TheDAO ultimately failed and led to a large rift in the Ethereum community, further devolving into a split of Ethereum into two different blockchains and cryptocurrencies. <a class="reference external" href="ethereum.org">Ethereum</a> and <a class="reference external" href="https://ethereumclassic.github.io">Ethereum Classic</a>. <a class="reference external" href="http://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/">This article</a> provides more details on the consequencs of TheDAO’s failure.</p>
+</div>
+<div class="section" id="ethereum-naming-service-ens-launch">
+<h2>Ethereum Naming Service (ENS) launch<a class="headerlink" href="#ethereum-naming-service-ens-launch" title="Permalink to this headline">¶</a></h2>
+<p>The ENS is another project built on Ethereum that suffered problems after its first launch. Fortunately the developers took notes from the shortcomings of TheDAO incorporated a failsafes into their contracts.</p>
+<p>The ENS incorporated smart contracts that could be upgraded or taken down. This was crucial in recovering from the bugs discovered after ENS was deployed. The root ENS smart contracts were under the control of seven keyholders, all public figures, four of whom were required to sign off on any upgrades and changes.</p>
+<p>The ENS developers posted a detailed <a class="reference external" href="https://docs.google.com/document/d/1Xr6JELHHWb5ONl_WvJDmIwbfShTgWpMqiNRag2IdmLI/edit">postmortem</a> of the shortcoming of their smart contracts after the system was taken down.</p>
+<p>After the solving the bugs discovered in the first launch the ENS team had <a class="reference external" href="https://medium.com/the-ethereum-name-service/the-ens-audit-results-are-in-7d4ab3c4a6ca">security audits</a> done by two independent and prominent Ethereum developers. Additionally the ENS team <em>made the results of the audits public</em>, contributing to the community knowledge pool on developing safe, secure decentralized applications.</p>
+</div>
+<div class="section" id="gnosis-token-sale">
+<h2>Gnosis Token sale<a class="headerlink" href="#gnosis-token-sale" title="Permalink to this headline">¶</a></h2>
+<p>Be diligent about promoting your smart contracts. There is a lot of hype in the blockchain space and people who will fund you just because you mention “blockchain”, “Ethereum”, or “Initial Coin Offering (ICO)”. Don’t succumb to the temptation! Use caps to only accept as much money into your smart contract as is necessary for your project to run.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="etherchallenges.html" class="btn btn-neutral" title="Solidity Challenges" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Firescar96.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0a1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

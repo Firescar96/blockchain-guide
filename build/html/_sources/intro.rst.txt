@@ -1,0 +1,166 @@
+========================================
+Building Blocks of Blockchain Technology
+========================================
+
+Cryptocurrencies uniquely combine pieces of cryptography and game theory to create a distributed, decentralized peer to peer payment network.
+
+Alice and Bob
+=============
+It's imperative when talking about crypto to use the correct naming for example people. At minimum the first two participants should be named Alice and Bob. Any attacker must be called Eve. From there continue from C down the alphabet. For example: Charlie, Dawn, Frank, Gilbert, Jill, etc.
+
+Cryptographic Primitives and Data Structures
+============================================
+`Like every other field <https://www.xkcd.com/435/>`_ in existence, cryptography is just applied math. Expressing data as sequences of numbers allows for simple, yet powerful applications of mathmetical formulas to accomplish a wide range of goals.
+
+Hash Functions
+##############
+A hash function maps an arbitrary amount of data to a value of fixed size. It's deterministic, the same key as input will always return the same value as output.
+
+Example:
+  A function *H* that takes characters, words, or sentences and returns the first character.
+
+  - H(a) -> a
+  - H(alphabet) -> a
+  - H(The light at the end of the tunnel.) -> T
+
+This isn't considered a "good" hash function, because if used in practice there will probably be many *collisions* where two keys map to the same value. A *perfect* hash function maps every key to a different value. Perfect hash functions don't exist unless the range of keys is constrained to a fixed number of possibilities.
+
+An example of a non-perfect but still very good hash function is `SHA-3 <https://en.wikipedia.org/wiki/SHA-3#Design>`_. Multiple variants exist such as SHA3-256 and SHA3-512 which return 256 bit and 512 bit values respectively. Because hash function can have collisions, they also function as *one-way functions* because there is no way to retrieve the original keys from the value. At the same time 256 is enough bits of entropy that collisions are practically not worth considering, as there are an estimated :math:`2^{272}` atoms in the entire universe. 256 bits of entropy is also secure enough, and 512 bits is for sure enough, to deter attempts to brute force determine keys from the value.
+
+Randomness
+##########
+
+It's hard to get a truly random number that can't be predicted over time. The strength of a random number lays in it's source of entropy, this can be: mouse movements, the temperature, air currents, the time, etc.
+
+Hashing can be used to combine the inputs into a final psuedo-random number and obscure the sources of entropy.
+
+Public-key Cryptography
+=======================
+This refers to any system that uses key pairs. The private key is kept secret and used by the holder to authenticate their identity. From the private key an infinite number of public keys can be derived. By design public keys can be shared freely without compromising the private key.
+
+Signing
+=======
+Public-key cryptography can be used for authentication of a person's identity. *Assuming that a person's private key hasn't been compromised* then that key can be used to sign a document, and the signature can be verified with the public key.
+
+Example:
+  Schnorr Signatures
+
+| define:
+
+  | public generator :math:`G`
+  | Alice's private_key: :math:`a`
+  | Alice's public_key: :math:`A = G^a\; mod\; G`
+  | random signing number: :math:`k`
+  | generated signing key: :math:`r = G^k\; mod\; G`
+  | a message: :math:`M`
+  | || means concatenation
+  |
+
+Signing
+  With these Alice can compute a signature: :math:`S`
+
+.. math::
+  E = H(r || M)
+
+  S = k - E*a
+
+|  Alice publishes (M, E, S)
+|
+
+**Verification**
+
+.. math::
+
+  r_v = G^S * A^E
+
+  e_v = H(r_v || M)
+
+| check that :math:`e_v = E`
+
+**Proof**
+
+.. math::
+
+  r_v = G^S * A^E = G^{k - E*a} * G^{E*a} = G^k = r
+
+  e_v = H(r_v || M) = H(r || M) = e
+
+Encryption
+==========
+Going further than just authentication, public-key cryptography can be used to encrypt a message so that only a select party can read it. Messages can be encrypted with a private key and decoded with a public key and vice versa.
+
+Example: RSA
+
+| define:
+
+  | two large primes: :math:`p, q`
+  | the `totient function <https://en.wikipedia.org/wiki/Euler's_totient_function>`_: :math:`\Phi`
+  | secret encryption key: :math:`e`
+  | message: :math:`m`
+
+Encryption
+  Alice can then compute:
+
+.. math::
+
+  N = p*q
+
+  \Phi(n) = (p-1)*(q-1)
+
+  D = \frac{1}{e}\; mod(\; \Phi(N)\;)
+
+  C = m^e\; mod(\; N \;)
+
+| Alice then publishes the :math:`(C, D, N)`
+
+**Decryption**
+
+.. math::
+
+  m = C^D\; mod(\; N \;) = m^{E*D}\; mod(\; N \;) = m^1\; mod(\; N \;) = m
+
+Proof
+  This is harder to explain, but it is detailed on the RSA `Wikipedia Page <https://en.wikipedia.org/wiki/RSA_(cryptosystem)>`_.
+
+Diffie-Hellman Key Exchange
+===========================
+
+Using public-key cryptography, Alice and Bob can create a cryptographically secure channel and send encrypted messages to each other.
+
+| define:
+
+  | public generator :math:`G`
+  | Alice's private_key: :math:`a`
+  | Alice's public_key: :math:`A = G^a\; mod\; G`
+  | Bob's private_key: :math:`b`
+  | Bob's public_key: :math:`B = G^b\; mod\; G`
+
+| Then Alice and bob can trade their public keys and independently construct a shared secret for encrypting their messages.
+
+.. math::
+
+  Alice:\; (a, B) -> B^a = G^{ab}
+
+  Bob:\; (b, A) -> A^b = G^{ab}
+
+| Once they both have a shared secret that only they know there is an infinite number of ways they can use the secret to encrypt and decrypt messages to each other. The unsolved `Discreet Log Problem <https://en.wikipedia.org/wiki/Discrete_logarithm>`_ ensures that an attacker cannot use the public keys to determine the shared secret.
+
+Merkel Trees
+============
+These are a type of trie data structure where every non leaf element contains a hash of its children. There are no other constraints on its formation.
+
+.. image:: _static/images/merkle-tree.png
+
+
+Game Theory
+===========
+
+Nash Equilibrium
+################
+
+.. image:: _static/images/nash-1.png
+
+Decentralize all The Things
+===========================
+
+.. image:: _static/images/networks.jpg

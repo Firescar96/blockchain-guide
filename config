@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://n0303666@git.forge.lmig.com/scm/etsbloc/lm-blockchain-docs.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Search &mdash; Blockchain Guide 1.0a1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="#"/>
+    <link rel="top" title="Blockchain Guide 1.0a1 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blockchain Guide
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">Cryptology Primer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#alice-and-bob">Alice and Bob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#cryptographic-primitives-and-data-structures">Cryptographic Primitives and Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#hash-functions">Hash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#randomness">Randomness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#public-key-cryptography">Public-key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#signing">Signing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#diffie-hellman-key-exchange">Diffie-Hellman Key Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#merkel-trees">Merkel Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#game-theory">Game Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#nash-equilibrium">Nash Equilibrium</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#decentralize-all-the-things">Decentralize all The Things</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="crypto.html#appendix">Appendix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#a-schnorr-signatures">A) Schnorr Signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#b-rsa">B) RSA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto.html#c-diffie-hellman-key-exchange">C) Diffie-Hellman Key Exchange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitcoin.html">Bitcoin and the Blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">In depth about Blockchain Technology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#trust">Trust</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#chain-reorgs">Chain Reorgs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#types-of-nodes">Types of Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#private-vs-public-blockchains">Private vs Public Blockchains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#failure-modes">Failure Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#attack">51% Attack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blockchain.html#contentious-hardforks">Contentious Hardforks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="blockchain.html#consensus-algorithms">Consensus Algorithms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations of the Blockchain</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#virtual-machines">Virtual Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#size">Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#latency-and-consistency">Latency and Consistency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#legality">Legality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#the-world-outside-the-blockchain">The World Outside the Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#identity">Identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ethereum.html">Ethereum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#wallets-and-interacting-with-the-ethereum-blockchain">Wallets and Interacting with the Ethereum Blockchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#setting-up-development-environments">Setting up Development environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#solidity-basics">Solidity Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#interacting-with-your-contract-resources">Interacting with your contract - Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ethereum.html#extra-data">Extra Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solidity.html">Solidity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="etherchallenges.html">Solidity Challenges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="etherfails.html">Failure By Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#thedao">TheDAO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#ethereum-naming-service-ens-launch">Ethereum Naming Service (ENS) launch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="etherfails.html#gnosis-token-sale">Gnosis Token sale</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blockchain Guide</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Search</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search
+      functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Firescar96.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0a1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/searchtools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  <script type="text/javascript">
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script type="text/javascript" id="searchindexloader"></script>
+   
+
+
+</body>
+</html>

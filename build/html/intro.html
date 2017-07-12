@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building Blocks of Blockchain Technology &mdash; Blockchain Guide 1.0a1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Blockchain Guide 1.0a1 documentation" href="index.html"/>
+        <link rel="next" title="Bitcoin and the Blockchain" href="bitcoin.html"/>
+        <link rel="prev" title="Welcome to Blockchain Guide’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Blockchain Guide
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building Blocks of Blockchain Technology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#alice-and-bob">Alice and Bob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cryptographic-primitives-and-data-structures">Cryptographic Primitives and Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hash-functions">Hash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#randomness">Randomness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#public-key-cryptography">Public-key Cryptography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signing">Signing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diffie-hellman-key-exchange">Diffie-Hellman Key Exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merkel-trees">Merkel Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game-theory">Game Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nash-equilibrium">Nash Equilibrium</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#decentralize-all-the-things">Decentralize all The Things</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bitcoin.html">Bitcoin and the Blockchain</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Blockchain Guide</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Building Blocks of Blockchain Technology</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-blocks-of-blockchain-technology">
+<h1>Building Blocks of Blockchain Technology<a class="headerlink" href="#building-blocks-of-blockchain-technology" title="Permalink to this headline">¶</a></h1>
+<p>Cryptocurrencies uniquely combine pieces of cryptography and game theory to create a distributed, decentralized peer to peer payment network.</p>
+<div class="section" id="alice-and-bob">
+<h2>Alice and Bob<a class="headerlink" href="#alice-and-bob" title="Permalink to this headline">¶</a></h2>
+<p>It’s imperative when talking about crypto to use the correct naming for example people. At minimum the first two participants should be named Alice and Bob. Any attacker must be called Eve. From there continue from C down the alphabet. For example: Charlie, Dawn, Frank, Gilbert, Jill, etc.</p>
+</div>
+<div class="section" id="cryptographic-primitives-and-data-structures">
+<h2>Cryptographic Primitives and Data Structures<a class="headerlink" href="#cryptographic-primitives-and-data-structures" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.xkcd.com/435/">Like every other field</a> in existence, cryptography is just applied math. Expressing data as sequences of numbers allows for simple, yet powerful applications of mathmetical formulas to accomplish a wide range of goals.</p>
+<div class="section" id="hash-functions">
+<h3>Hash Functions<a class="headerlink" href="#hash-functions" title="Permalink to this headline">¶</a></h3>
+<p>A hash function maps an arbitrary amount of data to a value of fixed size. It’s deterministic, the same key as input will always return the same value as output.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd><p class="first">A function <em>H</em> that takes characters, words, or sentences and returns the first character.</p>
+<ul class="last simple">
+<li>H(a) -&gt; a</li>
+<li>H(alphabet) -&gt; a</li>
+<li>H(The light at the end of the tunnel.) -&gt; T</li>
+</ul>
+</dd>
+</dl>
+<p>This isn’t considered a “good” hash function, because if used in practice there will probably be many <em>collisions</em> where two keys map to the same value. A <em>perfect</em> hash function maps every key to a different value. Perfect hash functions don’t exist unless the range of keys is constrained to a fixed number of possibilities.</p>
+<p>An example of a non-perfect but still very good hash function is <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-3#Design">SHA-3</a>. Multiple variants exist such as SHA3-256 and SHA3-512 which return 256 bit and 512 bit values respectively. Because hash function can have collisions, they also function as <em>one-way functions</em> because there is no way to retrieve the original keys from the value. At the same time 256 is enough bits of entropy that collisions are practically not worth considering, as there are an estimated <img class="math" src="_images/math/759b5ef54e035394665b4c0e0bc072191b33ab84.png" alt="2^{272}"/> atoms in the entire universe. 256 bits of entropy is also secure enough, and 512 bits is for sure enough, to deter attempts to brute force determine keys from the value.</p>
+</div>
+<div class="section" id="randomness">
+<h3>Randomness<a class="headerlink" href="#randomness" title="Permalink to this headline">¶</a></h3>
+<p>It’s hard to get a truly random number that can’t be predicted over time. The strength of a random number lays in it’s source of entropy, this can be: mouse movements, the temperature, air currents, the time, etc.</p>
+<p>Hashing can be used to combine the inputs into a final psuedo-random number and obscure the sources of entropy.</p>
+</div>
+</div>
+<div class="section" id="public-key-cryptography">
+<h2>Public-key Cryptography<a class="headerlink" href="#public-key-cryptography" title="Permalink to this headline">¶</a></h2>
+<p>This refers to any system that uses key pairs. The private key is kept secret and used by the holder to authenticate their identity. From the private key an infinite number of public keys can be derived. By design public keys can be shared freely without compromising the private key.</p>
+</div>
+<div class="section" id="signing">
+<h2>Signing<a class="headerlink" href="#signing" title="Permalink to this headline">¶</a></h2>
+<p>Public-key cryptography can be used for authentication of a person’s identity. <em>Assuming that a person’s private key hasn’t been compromised</em> then that key can be used to sign a document, and the signature can be verified with the public key.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>Schnorr Signatures</dd>
+</dl>
+<div class="line-block">
+<div class="line">define:</div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">public generator <img class="math" src="_images/math/dee63237674afc3154c2e33b7b68d67f85f2ee0a.png" alt="G"/></div>
+<div class="line">Alice’s private_key: <img class="math" src="_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.png" alt="a"/></div>
+<div class="line">Alice’s public_key: <img class="math" src="_images/math/8fb9f4db591859d31667431a5a3a1122ef9ce563.png" alt="A = G^a\; mod\; G"/></div>
+<div class="line">random signing number: <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/></div>
+<div class="line">generated signing key: <img class="math" src="_images/math/67285ad79749bb0b8ae9bbcca1fdc36ad37168c2.png" alt="r = G^k\; mod\; G"/></div>
+<div class="line">a message: <img class="math" src="_images/math/450a8e2c2320d77181e0d4fc68c947e9a5de8ecb.png" alt="M"/></div>
+<div class="line">|| means concatenation</div>
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt>Signing</dt>
+<dd>With these Alice can compute a signature: <img class="math" src="_images/math/1dbc400fcc213305415872f9f625cd2828f97a00.png" alt="S"/></dd>
+</dl>
+<div class="math">
+<p><img src="_images/math/ecc89a1cbf069bc5262cb38e6a28199a1cc2aed3.png" alt="E = H(r || M)
+
+S = k - E*a"/></p>
+</div><div class="line-block">
+<div class="line">Alice publishes (M, E, S)</div>
+<div class="line"><br /></div>
+</div>
+<p><strong>Verification</strong></p>
+<div class="math">
+<p><img src="_images/math/ddac315fb2e21308585c3b2218f119a4b2d9ccd9.png" alt="r_v = G^S * A^E
+
+e_v = H(r_v || M)"/></p>
+</div><div class="line-block">
+<div class="line">check that <img class="math" src="_images/math/15f7fd934f6fd1049d7d263145321f7972362e0a.png" alt="e_v = E"/></div>
+</div>
+<p><strong>Proof</strong></p>
+<div class="math">
+<p><img src="_images/math/dd1a68160e8f87062e6de86a5d621bc954d15864.png" alt="r_v = G^S * A^E = G^{k - E*a} * G^{E*a} = G^k = r
+
+e_v = H(r_v || M) = H(r || M) = e"/></p>
+</div></div>
+<div class="section" id="encryption">
+<h2>Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">¶</a></h2>
+<p>Going further than just authentication, public-key cryptography can be used to encrypt a message so that only a select party can read it. Messages can be encrypted with a private key and decoded with a public key and vice versa.</p>
+<p>Example: RSA</p>
+<div class="line-block">
+<div class="line">define:</div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">two large primes: <img class="math" src="_images/math/e66c67c1f13d7676f6d583233ce66beb7e379a7c.png" alt="p, q"/></div>
+<div class="line">the <a class="reference external" href="https://en.wikipedia.org/wiki/Euler's_totient_function">totient function</a>: <img class="math" src="_images/math/e486de19dbb61c9a63584f6e4ddd6e92ef03d665.png" alt="\Phi"/></div>
+<div class="line">secret encryption key: <img class="math" src="_images/math/78a06cf7a34f39fde71fbba0d5539baae7c72d4e.png" alt="e"/></div>
+<div class="line">message: <img class="math" src="_images/math/edba97b4c0d864d26e92ea7ea73767fa38eef3f7.png" alt="m"/></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt>Encryption</dt>
+<dd>Alice can then compute:</dd>
+</dl>
+<div class="math">
+<p><img src="_images/math/67ef30e59fa466ee90cf38b5fc4630190d3ac5e4.png" alt="N = p*q
+
+\Phi(n) = (p-1)*(q-1)
+
+D = \frac{1}{e}\; mod(\; \Phi(N)\;)
+
+C = m^e\; mod(\; N \;)"/></p>
+</div><div class="line-block">
+<div class="line">Alice then publishes the <img class="math" src="_images/math/88e1c3d8400dc99ebbd6896ee73e2cb8cdb8130b.png" alt="(C, D, N)"/></div>
+</div>
+<p><strong>Decryption</strong></p>
+<div class="math">
+<p><img src="_images/math/1272702f7694f4aed02ef3a10c7c84b7f91f4bf2.png" alt="m = C^D\; mod(\; N \;) = m^{E*D}\; mod(\; N \;) = m^1\; mod(\; N \;) = m"/></p>
+</div><dl class="docutils">
+<dt>Proof</dt>
+<dd>This is harder to explain, but it is detailed on the RSA <a class="reference external" href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Wikipedia Page</a>.</dd>
+</dl>
+</div>
+<div class="section" id="diffie-hellman-key-exchange">
+<h2>Diffie-Hellman Key Exchange<a class="headerlink" href="#diffie-hellman-key-exchange" title="Permalink to this headline">¶</a></h2>
+<p>Using public-key cryptography, Alice and Bob can create a cryptographically secure channel and send encrypted messages to each other.</p>
+<div class="line-block">
+<div class="line">define:</div>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">public generator <img class="math" src="_images/math/dee63237674afc3154c2e33b7b68d67f85f2ee0a.png" alt="G"/></div>
+<div class="line">Alice’s private_key: <img class="math" src="_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.png" alt="a"/></div>
+<div class="line">Alice’s public_key: <img class="math" src="_images/math/8fb9f4db591859d31667431a5a3a1122ef9ce563.png" alt="A = G^a\; mod\; G"/></div>
+<div class="line">Bob’s private_key: <img class="math" src="_images/math/57c9d14bb082716df9000146882ce365335d08f1.png" alt="b"/></div>
+<div class="line">Bob’s public_key: <img class="math" src="_images/math/4ef3bd26dc9dc057855a6f86ef68caffaad28648.png" alt="B = G^b\; mod\; G"/></div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Then Alice and bob can trade their public keys and independently construct a shared secret for encrypting their messages.</div>
+</div>
+<div class="math">
+<p><img src="_images/math/99a40a5263edbc8dde60a79e1a15f06abc3f677e.png" alt="Alice:\; (a, B) -&gt; B^a = G^{ab}
+
+Bob:\; (b, A) -&gt; A^b = G^{ab}"/></p>
+</div><div class="line-block">
+<div class="line">Once they both have a shared secret that only they know there is an infinite number of ways they can use the secret to encrypt and decrypt messages to each other. The unsolved <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_logarithm">Discreet Log Problem</a> ensures that an attacker cannot use the public keys to determine the shared secret.</div>
+</div>
+</div>
+<div class="section" id="merkel-trees">
+<h2>Merkel Trees<a class="headerlink" href="#merkel-trees" title="Permalink to this headline">¶</a></h2>
+<p>These are a type of trie data structure where every non leaf element contains a hash of its children. There are no other constraints on its formation.</p>
+<img alt="_images/merkle-tree.png" src="_images/merkle-tree.png" />
+</div>
+<div class="section" id="game-theory">
+<h2>Game Theory<a class="headerlink" href="#game-theory" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nash-equilibrium">
+<h3>Nash Equilibrium<a class="headerlink" href="#nash-equilibrium" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/nash-1.png" src="_images/nash-1.png" />
+</div>
+</div>
+<div class="section" id="decentralize-all-the-things">
+<h2>Decentralize all The Things<a class="headerlink" href="#decentralize-all-the-things" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/networks.jpg" src="_images/networks.jpg" />
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bitcoin.html" class="btn btn-neutral float-right" title="Bitcoin and the Blockchain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Blockchain Guide’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Firescar96.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0a1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
