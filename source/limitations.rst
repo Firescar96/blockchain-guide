@@ -10,6 +10,7 @@ Size
 ====
 - the size of the blockchain trends upwards
 - some portion of the network must store everything
+
 Don't contribute to blockchain bloat. Data should be deleted from storage as soon as possible to mitigate contributing to the inexorable increase in the size of the blockchain. Some blockchain technologies, such as Ethereum, give a discount to smart contract operations that involve deleting data to incentivize self-regulation of data storage.
 
 Latency and Consistency

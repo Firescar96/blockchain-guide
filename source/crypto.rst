@@ -115,7 +115,7 @@ Schnorr Signatures are special because they are one of the simplest and efficien
   | concatenation symbol: :math:`||`
 
 Note:
-  Remember that everything defined above, including the message can and must be expressed as a number.
+Remember that everything defined above, including the message can and must be expressed as a number.
 |
 
 Signing
@@ -148,7 +148,7 @@ Signing
   e_v = H(r_v || M) = H(r || M) = E
 
 B) RSA
-=====
+======
 Named after it's creators, RSA is extremely widely used. Even though more efficient algorithms have since been discovered RSA is still useful as an encryption scheme that's relatively simple to teach.
 
 | define:
